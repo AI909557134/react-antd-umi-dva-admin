@@ -2,11 +2,36 @@ export default {
 	singular: true,
 	plugins: [
     ['umi-plugin-react', {
-      // 这里暂时还没有添加配置，该插件还不会有作用，我们会在后面的课程按照需求打开相应的配置
+    	antd: true,
+    	dva: true,
     }],
   ],
 	routes: [{
     path: '/',
-    component: './helloworld',
+    component: '../layout',
+    routes:[
+    	{
+        path: '/',
+        component: 'Home',
+      },
+      {
+        path: '/home',
+        component: 'Home'
+      },
+      {
+        path: '/order',
+        routes: [
+          { path: '/order/shoplist', component: 'order/ShopList' },
+          { path: '/order/myorder', component: 'order/MyOrder' },
+          { path: '/order/customer', component: 'order/Customer' }
+        ]
+      },
+    ]
   }],
+//	proxy: {
+//	    '/dev': {
+//	      target: 'http://testuapi.huopin.cn',
+//	      changeOrigin: true,
+//	    },
+//	},
 };
