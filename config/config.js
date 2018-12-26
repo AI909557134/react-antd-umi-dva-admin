@@ -29,9 +29,9 @@ export default {
     ]
   }],
 //	proxy: {
-//	    '/dev': {
-//	      target: 'http://testuapi.huopin.cn',
-//	      changeOrigin: true,
-//	    },
+//  '/dev': {
+//    target: 'http://testuapi.huopin.cn',
+//    changeOrigin: true,
+//  },
 //	},
 };
